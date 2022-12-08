@@ -1,0 +1,19 @@
+{
+    "name": "05-js-intro",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "labas": "nodemon ./js/01-labas.js",
+        "numbers": "nodemon ./js/02-numbers.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Jurgita",
+    "license": "MIT",
+    "dependencies": {
+        "-": "^0.0.1",
+        "D": "^1.0.0",
+        "nodemon": "^2.0.20"
+    }
+}
