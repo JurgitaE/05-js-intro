@@ -151,3 +151,5 @@ console.log("index:", index2++);
 console.log("index:", index2++);
 console.log("index:", index2++);
 console.log("index:", index2++);
+
+console.log(8 ** (1 / 3));

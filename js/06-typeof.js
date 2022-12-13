@@ -35,3 +35,8 @@ console.log(typeof ["", true, 5]);
 
 console.log({}, typeof {});
 console.log({ age: 99 }, typeof { age: 99 });
+
+console.log("--------------");
+
+const x = typeof ("" + 5);
+console.log(x);
