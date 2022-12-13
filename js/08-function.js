@@ -71,9 +71,9 @@ function listAverage(marks) {
     return sum / count;
 }
 
-const average1 = listAverage(student1);
-const average2 = listAverage(student2);
-const average3 = listAverage(student3);
+const average1 = listAverage(student1); //6
+const average2 = listAverage(student2); //8
+const average3 = listAverage(student3); //5
 
 console.log(average1);
 console.log(average2);
