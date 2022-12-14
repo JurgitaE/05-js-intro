@@ -28,11 +28,11 @@ function shop(prekes, valiuta) {
     console.log("MUSU PARDUOTUVE:");
     console.log(" ----------------");
     let kaina = 0;
-    for (let i = 0; i < prekes.length; i++) {
+    for (let i = 0; i < prekes.length - 1; i++) {
         console.log(
             `${prekes[i].name} kainuoja ${prekes[i].price.toFixed(
                 2
-            )} ${valiuta} ir ju turime ${prekes[i].inStock} vienetu.`
+            )} ${valiuta} ir turime ju ${prekes[i].inStock} vienetu.`
         );
         kaina += prekes[i].price * prekes[i].inStock;
     }
@@ -48,6 +48,11 @@ shop(prekes, valiuta);
 // 3) Pomidoras kainuoja 1.57 EUR ir turime ju 30 vienetu.
 // ----------------
 // Viso asortimento kaina: 97.10 EUR.
+console.log(`
+
+ANTRAS VARIANTAS
+
+`);
 function shop2(prekes, valiuta) {
     console.log("MUSU PARDUOTUVE:");
     console.log(" ----------------");
@@ -64,7 +69,7 @@ function shop2(prekes, valiuta) {
             console.log(
                 `${prekes[i].name} kainuoja ${prekes[i].price.toFixed(
                     2
-                )} ${valiuta} ir ju turime ${prekes[i].inStock} vienetu.`
+                )} ${valiuta} ir turime ju ${prekes[i].inStock} vienetu.`
             );
             kaina += prekes[i].price * prekes[i].inStock;
         }
