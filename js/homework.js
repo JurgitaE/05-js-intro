@@ -155,8 +155,11 @@ reverse("abcd");
 
 function divNoRemainder(numStart, numEnd, divider) {
     let numCounter = 0;
-    for (let i = numStart; i <= numEnd - divider; i++) {
-        if (i % divider === 0) numCounter++;
+    for (let i = numStart; i <= numEnd; i++) {
+        if (i % divider === 0) {
+            numCounter++;
+            // console.log(i);
+        }
     }
     console.log(`Skaičių intervale tarp ${numStart} ir ${numEnd}, besidalijančių be liekanos iš ${divider} yra ${numCounter} vienetai.`);
 }
