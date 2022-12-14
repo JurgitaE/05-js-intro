@@ -80,7 +80,7 @@ console.log(string3);
 console.clear();
 // Funkcijos
 //1
-function tusciaFunkcija() {
+/* function tusciaFunkcija() {
     return false;
 }
 console.log(tusciaFunkcija());
@@ -104,4 +104,68 @@ console.log(daugyba(2, 5));
 console.log(daugyba(0, 10));
 console.log(daugyba(12.5, 5));
 
+ */
 
+console.log("-----Ciklo for panaudojimas--------");
+// Suskaičiuoti ką gausime susumavus skaičius intervale tarp (imtinai):
+// 0 … 0
+// 0 … 4
+// 0 … 100
+// 574 … 815
+// -50 … 50
+// -70 … 30
+
+function sum(numStart, numEnd) {
+    let total = 0;
+    for (let i = numStart; i <= numEnd; i++) {
+        total += i;
+    }
+    console.log(total);
+}
+sum(0, 0);
+sum(0, 4);
+sum(0, 100);
+sum(574, 815);
+sum(-50, 50);
+sum(-70, 30);
+
+// panaudojant ciklą perrašyti tekstinio tipo kintamųjų reikšmes iš kito galo:
+// pvz.: “abcdef” -> “fedcba”
+
+function reverse(str) {
+    let reversedString = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        reversedString += str[i];
+    }
+    console.log(reversedString);
+}
+
+reverse("abcd");
+
+// Suskaičiuoti, kiek nurodytame intervale yra skaičių, kurie dalijasi be liekanos iš 3, 5 ir 7 atskirai:
+
+function divNoRemainder(numStart, numEnd, divider) {
+    let numCounter = 0;
+    for (let i = numStart; i <= numEnd - divider; i++) {
+        if (i % divider === 0) numCounter++;
+    }
+    console.log(`Skaičių intervale tarp ${numStart} ir ${numEnd}, besidalijančių be liekanos iš ${divider} yra ${numCounter} vienetai.`);
+}
+function threeCalls(numStart, numEnd) {
+    divNoRemainder(numStart, numEnd, 3);
+    divNoRemainder(numStart, numEnd, 5);
+    divNoRemainder(numStart, numEnd, 7);
+}
+
+threeCalls(0, 11);
+threeCalls(8, 31);
+threeCalls(-18, 18);
+
+// divNoRemainder
+// 0 - 11
+// 8 - 31
+// -18 - 18
+// rezultatą pateikti tokiu formatu:
+// Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 3 yra 4 vienetai.
+// Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 5 yra 3 vienetai.
+// Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 7 yra 2 vienetai.
