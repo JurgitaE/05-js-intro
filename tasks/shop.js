@@ -24,20 +24,20 @@ const prekes = [
     },
 ];
 
-function shop(prekes, valiuta) {
+function shop(goods, currency) {
     console.log("MUSU PARDUOTUVE:");
     console.log(" ----------------");
-    let kaina = 0;
+    let totalPrice = 0;
     for (let i = 0; i < prekes.length - 1; i++) {
         console.log(
             `${prekes[i].name} kainuoja ${prekes[i].price.toFixed(
                 2
             )} ${valiuta} ir turime ju ${prekes[i].inStock} vienetu.`
         );
-        kaina += prekes[i].price * prekes[i].inStock;
+        totalPrice += prekes[i].price * prekes[i].inStock;
     }
     console.log("----------------");
-    console.log(`Viso asortimento kaina: ${kaina.toFixed(2)} ${valiuta}.`);
+    console.log(`Viso asortimento kaina: ${totalPrice.toFixed(2)} ${valiuta}.`);
 }
 
 shop(prekes, valiuta);
@@ -53,10 +53,10 @@ console.log(`
 ANTRAS VARIANTAS
 
 `);
-function shop2(prekes, valiuta) {
+function shop2(goods, currency) {
     console.log("MUSU PARDUOTUVE:");
     console.log(" ----------------");
-    let kaina = 0;
+    let totalPrice = 0;
     for (let i = 0; i < prekes.length; i++) {
         if (prekes[i].inStock === 0) {
             console.log(
@@ -64,18 +64,18 @@ function shop2(prekes, valiuta) {
                     2
                 )} ${valiuta}. Prekes neturime sandelyje.`
             );
-            kaina += prekes[i].price * prekes[i].inStock;
+            totalPrice += prekes[i].price * prekes[i].inStock;
         } else {
             console.log(
                 `${prekes[i].name} kainuoja ${prekes[i].price.toFixed(
                     2
                 )} ${valiuta} ir turime ju ${prekes[i].inStock} vienetu.`
             );
-            kaina += prekes[i].price * prekes[i].inStock;
+            totalPrice += prekes[i].price * prekes[i].inStock;
         }
     }
     console.log("----------------");
-    console.log(`Viso asortimento kaina: ${kaina.toFixed(2)} ${valiuta}.`);
+    console.log(`Viso asortimento kaina: ${totalPrice.toFixed(2)} ${valiuta}.`);
 }
 
 shop2(prekes, valiuta);
