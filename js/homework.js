@@ -163,12 +163,18 @@ function divNoRemainder(numStart, numEnd, divider) {
     }
     console.log(`Skaičių intervale tarp ${numStart} ir ${numEnd}, besidalijančių be liekanos iš ${divider} yra ${numCounter} vienetai.`);
 }
-function threeCalls(numStart, numEnd) {
-    divNoRemainder(numStart, numEnd, 3);
-    divNoRemainder(numStart, numEnd, 5);
-    divNoRemainder(numStart, numEnd, 7);
+
+const dividers = [3, 5, 7];
+function nCalls(numStart, numEnd, dividers) {
+    const start = numStart;
+    const end = numEnd;
+    const divs = dividers;
+
+    for (let i = 0; i < divs.length; i++) {
+        divNoRemainder(start, end, divs[i]);
+    }
 }
 
-threeCalls(0, 11);
-threeCalls(8, 31);
-threeCalls(-18, 18);
+nCalls(0, 11, dividers);
+nCalls(8, 31, dividers);
+nCalls(-18, 18, dividers);
