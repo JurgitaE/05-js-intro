@@ -166,12 +166,8 @@ function divNoRemainder(numStart, numEnd, divider) {
 
 const dividers = [3, 5, 7];
 function nCalls(numStart, numEnd, dividers) {
-    const start = numStart;
-    const end = numEnd;
-    const divs = dividers;
-
-    for (let i = 0; i < divs.length; i++) {
-        divNoRemainder(start, end, divs[i]);
+    for (let i = 0; i < dividers.length; i++) {
+        divNoRemainder(numStart, numEnd, dividers[i]);
     }
 }
 
