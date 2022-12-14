@@ -117,68 +117,84 @@ if (day === 1) {
 
 console.log("---end---");
 
-// Atrakcionu parkas
-// 1
-//  const parkasDirba = true;
-// if(parkasDirba === true) {}
-// if(true === true) {}
-// if (true) {}
-// if(true) {vykdo sita koda} else {}
+/// Atrakcionu parkas
 
-// 2
+// 1)
+// const parkasDirba = true;
+// if (parkasDirba === true) {}
+// if (true === true) {}
+// if (true) {}
+// if (true) { vykdo sita koda } else {}
+
+// 2)
 // const parkasDirba = false;
 // if (parkasDirba === true) {}
 // if (false === true) {}
 // if (false) {}
-// if (false) {} else {vykdo sita koda}
-const parkasDirba = true;
+// if (false) {} else { vykdo sita koda }
+
+const parkasDirba = false;
 const bijauAukscio = true;
 
 if (parkasDirba) {
     if (bijauAukscio) {
-        console.log("Maaamaaa!");
+        console.log("Maaaaaamaaa!");
     } else {
-        console.log(`Einu i parka - bus smagu!`);
+        console.log("Einu i parka - bus smagu!");
     }
 } else {
     if (bijauAukscio) {
         console.log("Parkas nedirba - man pasiseke - liksiu sausomis kelnemis.");
     } else {
-        console.log("Parkas nedirba. Man liudna, nes labai norejau nueiti.");
+        console.log("Parkas nedirba. Man liudna, nes labai norejai nueiti :(");
     }
 }
 
 if (parkasDirba && bijauAukscio) {
-    console.log("Maaamaaa!");
+    console.log("Maaaaaamaaa!");
 } else if (parkasDirba && !bijauAukscio) {
-    console.log(`Einu i parka - bus smagu!`);
+    console.log("Einu i parka - bus smagu!");
 } else if (!parkasDirba && bijauAukscio) {
     console.log("Parkas nedirba - man pasiseke - liksiu sausomis kelnemis.");
 } else if (!parkasDirba && !bijauAukscio) {
-    console.log("Parkas nedirba. Man liudna, nes labai norejau nueiti.");
+    console.log("Parkas nedirba. Man liudna, nes labai norejai nueiti :(");
 } else {
-    console.log("Neimanomas variantas");
+    console.log("Neimanomas pasiekti atvejis!");
 }
 
-const ugis = 140;
-const ugioRiba = 160;
-const turiuPinigu = 5;
-const kaina = 10;
-const amziausRiba = 12;
 const amzius = 14;
+const amziausRiba = 12;
+const ugis = 180;
+const ugioRiba = 160;
+const turiuPinigu = 55;
+const kaina = 10;
+
+if (amzius >= amziausRiba) {
+    if (ugis >= ugioRiba) {
+        if (turiuPinigu >= kaina) {
+            console.log("Einu");
+        } else {
+            console.log("Negalima");
+        }
+    } else {
+        console.log("Negalima");
+    }
+} else {
+    console.log("Negalima");
+}
 
 if (amzius >= amziausRiba && ugis >= ugioRiba && turiuPinigu >= kaina) {
-    console.log("Einu.");
+    console.log("Einu");
 } else {
-    console.log("Negalima.");
+    console.log("Negalima");
 }
 
 if (amzius < amziausRiba) {
-    console.log("Negalima.");
+    console.log("Negalima");
 } else if (ugis < ugioRiba) {
-    console.log("Negalima.");
+    console.log("Negalima");
 } else if (turiuPinigu < kaina) {
-    console.log("Negalima.");
+    console.log("Negalima");
 } else {
-    console.log("Einu.");
+    console.log("Einu");
 }
