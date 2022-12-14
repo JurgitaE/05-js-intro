@@ -144,6 +144,15 @@ reverse("abcd");
 
 // Suskaičiuoti, kiek nurodytame intervale yra skaičių, kurie dalijasi be liekanos iš 3, 5 ir 7 atskirai:
 
+// divNoRemainder
+// 0 - 11
+// 8 - 31
+// -18 - 18
+// rezultatą pateikti tokiu formatu:
+// Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 3 yra 4 vienetai.
+// Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 5 yra 3 vienetai.
+// Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 7 yra 2 vienetai.
+
 function divNoRemainder(numStart, numEnd, divider) {
     let numCounter = 0;
     for (let i = numStart; i <= numEnd - divider; i++) {
@@ -160,12 +169,3 @@ function threeCalls(numStart, numEnd) {
 threeCalls(0, 11);
 threeCalls(8, 31);
 threeCalls(-18, 18);
-
-// divNoRemainder
-// 0 - 11
-// 8 - 31
-// -18 - 18
-// rezultatą pateikti tokiu formatu:
-// Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 3 yra 4 vienetai.
-// Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 5 yra 3 vienetai.
-// Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 7 yra 2 vienetai.
