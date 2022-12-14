@@ -99,8 +99,11 @@ const prekes = [
     },
 ];
 
+
+function shop()
+
 console.log("MUSU PARDUOTUVE:");
 console.log("-----------");
-
+console.log(`Bananas kainuoja 2.00 EUR ir turime ju 10 vnt.`);
 console.log("-----------");
 console.log(`Viso asortimento kaina: 97.10`);
