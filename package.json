@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        
+        "for": "nodemon ./js/10-for.js",
         "homework": "nodemon ./js/homework.js",
         "if": "nodemon ./js/09-if.js",
         "function": "nodemon ./js/08-function.js",
