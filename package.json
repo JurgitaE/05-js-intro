@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "joyful": "nodemon ./codewars/7-joyfullNums.js",
         "shop": "nodemon ./tasks/shop.js",
         "for": "nodemon ./js/10-for.js",
         "homework": "nodemon ./js/homework.js",

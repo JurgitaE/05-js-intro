@@ -122,6 +122,7 @@ function sum(numStart, numEnd) {
     }
     console.log(total);
 }
+
 sum(0, 0);
 sum(0, 4);
 sum(0, 100);
