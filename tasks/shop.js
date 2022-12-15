@@ -29,7 +29,7 @@ function shop(goods, currency) {
     console.log(" ----------------");
     let totalPrice = 0;
     for (let i = 0; i < goods.length - 1; i++) {
-        console.log(`${goods[i].name} kainuoja ${goods[i].price.toFixed(2)} ${currency} ir turime ju ${goods[i].inStock} vienetu.`);
+        console.log(`${i + 1}) ${goods[i].name} kainuoja ${goods[i].price.toFixed(2)} ${currency} ir turime ju ${goods[i].inStock} vienetu.`);
         totalPrice += goods[i].price * goods[i].inStock;
     }
     console.log("----------------");
@@ -55,10 +55,10 @@ function shop2(goods, currency) {
     let totalPrice = 0;
     for (let i = 0; i < prekes.length; i++) {
         if (goods[i].inStock === 0) {
-            console.log(`${goods[i].name} kainuoja ${goods[i].price.toFixed(2)} ${currency}. Prekes neturime sandelyje.`);
+            console.log(`${i + 1}) ${goods[i].name} kainuoja ${goods[i].price.toFixed(2)} ${currency}. Prekes neturime sandelyje.`);
             totalPrice += goods[i].price * goods[i].inStock;
         } else {
-            console.log(`${goods[i].name} kainuoja ${goods[i].price.toFixed(2)} ${currency} ir turime ju ${goods[i].inStock} vienetu.`);
+            console.log(`${i + 1}) ${goods[i].name} kainuoja ${goods[i].price.toFixed(2)} ${currency} ir turime ju ${goods[i].inStock} vienetu.`);
             totalPrice += goods[i].price * goods[i].inStock;
         }
     }
