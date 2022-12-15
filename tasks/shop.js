@@ -53,7 +53,7 @@ function shop2(goods, currency) {
     console.log("MUSU PARDUOTUVE:");
     console.log(" ----------------");
     let totalPrice = 0;
-    for (let i = 0; i < prekes.length; i++) {
+    for (let i = 0; i < goods.length; i++) {
         if (goods[i].inStock === 0) {
             console.log(`${i + 1}) ${goods[i].name} kainuoja ${goods[i].price.toFixed(2)} ${currency}. Prekes neturime sandelyje.`);
             totalPrice += goods[i].price * goods[i].inStock;
