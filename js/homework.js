@@ -79,33 +79,41 @@ console.log(string3);
  */
 console.clear();
 console.log("---------FUNKCIJOS------");
-//1
-/* function tusciaFunkcija() {
+
+/* 
+1. Funkcija pavadinimu “tusciaFunkcija”:
+nepriima jokių kintamųjų
+neatlieka jokios vidinės logikos
+gražina boolean tipo reikšmę “false”
+ */
+function tusciaFunkcija() {
     return false;
 }
-console.log(tusciaFunkcija());
+// console.log(tusciaFunkcija());
 
-// 2 Funkcija pavadinimu “daugyba”:
-// priima du skaičiaus tipo kintamuosius
-// atskirame kintamajame įsimena sandaugos reikšmę
-// gražina saudaugos rezultatą
-// TESTAI:
-// console.log( daugyba( skaicius1, skaicius2 ) );
-// console.log( daugyba( skaicius3, skaicius2 ) );
-// console.log( daugyba( skaicius1, skaicius3 ) );
-// rezultatas: teisingos reikšmės;
+/* 
+2. Funkcija pavadinimu “daugyba”:
+priima du skaičiaus tipo kintamuosius
+atskirame kintamajame įsimena sandaugos reikšmę
+gražina saudaugos rezultatą
+TESTAI:
+console.log( daugyba( skaicius1, skaicius2 ) );
+console.log( daugyba( skaicius3, skaicius2 ) );
+console.log( daugyba( skaicius1, skaicius3 ) );
+rezultatas: teisingos reikšmės; 
+*/
 
 function daugyba(a, b) {
     const multiply = a * b;
     return multiply;
 }
 
-console.log(daugyba(2, 5));
-console.log(daugyba(0, 10));
-console.log(daugyba(12.5, 5));
+// console.log(daugyba(2, 5));
+// console.log(daugyba(0, 10));
+// console.log(daugyba(12.5, 5));
 
-*/
-/* 3. Funkcija pavadinimu “skaitmenuKiekisSkaiciuje”:
+/* 
+3. Funkcija pavadinimu “skaitmenuKiekisSkaiciuje”:
 priima vieną kintamąjį
 jei perduotas kintamasis nėra skaičiaus tipo, tai išveda pranešimą “Pateikta netinkamo tipo reikšmė.”
 priešingu atveju, funkcija tęsia darbą
@@ -123,7 +131,8 @@ rezultatas: “Pateikta netinkamo tipo reikšmė.”
 console.log( skaitmenuKiekisSkaiciuje( “asd” ) );
 rezultatas: “Pateikta netinkamo tipo reikšmė.”
 console.log( skaitmenuKiekisSkaiciuje( NaN ) );
-rezultatas: “Pateikta netinkamo tipo reikšmė.” */
+rezultatas: “Pateikta netinkamo tipo reikšmė.” 
+*/
 function skaitmenuKiekisSkaiciuje(number) {
     if (typeof number !== "number" || !isFinite(number)) {
         return `Pateikta netinkamo tipo reikšmė.`;
@@ -160,7 +169,8 @@ rezultatas: -1
 console.log( didziausiasSkaiciusSarase( “pomidoras” ) );
 rezultatas: “Pateikta netinkamo tipo reikšmė.”
 console.log( didziausiasSkaiciusSarase( [] ) );
-rezultatas: “Pateiktas sąrašas negali būti tuščias.” */
+rezultatas: “Pateiktas sąrašas negali būti tuščias.” 
+*/
 
 function didziausiasSkaiciusSarase(numList) {
     if (typeof numList !== "object") {
@@ -253,35 +263,37 @@ function isrinktiRaides(str, everyN) {
     return newString;
 }
 
-console.log(isrinktiRaides("abcdefg", 2));
-console.log(isrinktiRaides("abcdefghijkl", 3));
-console.log(isrinktiRaides("abc", 0));
-console.log(isrinktiRaides("abc", 4));
-console.log(isrinktiRaides(1561, 2));
+// console.log(isrinktiRaides("abcdefg", 2));
+// console.log(isrinktiRaides("abcdefghijkl", 3));
+// console.log(isrinktiRaides("abc", 0));
+// console.log(isrinktiRaides("abc", 4));
+// console.log(isrinktiRaides(1561, 2));
 
 console.log("-----Ciklo for panaudojimas--------");
-// 1. Suskaičiuoti ką gausime susumavus skaičius intervale tarp (imtinai):
-// 0 … 0
-// 0 … 4
-// 0 … 100
-// 574 … 815
-// -50 … 50
-// -70 … 30
+/* 
+1. Suskaičiuoti ką gausime susumavus skaičius intervale tarp (imtinai):
+0 … 0
+0 … 4
+0 … 100
+574 … 815
+-50 … 50
+-70 … 30 
+*/
 
 function sum(numStart, numEnd) {
     let total = 0;
     for (let i = numStart; i <= numEnd; i++) {
         total += i;
     }
-    console.log(total);
+    return total;
 }
 
-sum(0, 0);
-sum(0, 4);
-sum(0, 100);
-sum(574, 815);
-sum(-50, 50);
-sum(-70, 30);
+// console.log(sum(0, 0));
+// console.log(sum(0, 4));
+// console.log(sum(0, 100));
+// console.log(sum(574, 815));
+// console.log(sum(-50, 50));
+// console.log(sum(-70, 30));
 
 /* 
 2.  panaudojant ciklą perrašyti tekstinio tipo kintamųjų reikšmes iš kito galo:
@@ -296,7 +308,7 @@ function reverse(str) {
     console.log(reversedString);
 }
 
-reverse("abcd");
+// reverse("abcd");
 
 /* 
 3.  Suskaičiuoti, kiek nurodytame intervale yra skaičių, kurie dalijasi be liekanos iš 3, 5 ir 7 atskirai:
@@ -316,7 +328,6 @@ function divNoRemainder(numStart, numEnd, divider) {
     for (let i = numStart; i <= numEnd; i++) {
         if (i % divider === 0) {
             numCounter++;
-            // console.log(i);
         }
     }
     console.log(`Skaičių intervale tarp ${numStart} ir ${numEnd}, besidalijančių be liekanos iš ${divider} yra ${numCounter} vienetai.`);
@@ -329,6 +340,6 @@ function nCalls(numStart, numEnd, dividers) {
     }
 }
 
-nCalls(0, 11, dividers);
-nCalls(8, 31, dividers);
-nCalls(-18, 18, dividers);
+// nCalls(0, 11, dividers);
+// nCalls(8, 31, dividers);
+// nCalls(-18, 18, dividers);
