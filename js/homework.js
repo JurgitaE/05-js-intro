@@ -78,7 +78,7 @@ string3 += stringsArr3[4];
 console.log(string3);
  */
 console.clear();
-// Funkcijos
+console.log("---------FUNKCIJOS------");
 //1
 /* function tusciaFunkcija() {
     return false;
@@ -104,10 +104,91 @@ console.log(daugyba(2, 5));
 console.log(daugyba(0, 10));
 console.log(daugyba(12.5, 5));
 
- */
+*/
+/* 3. Funkcija pavadinimu “skaitmenuKiekisSkaiciuje”:
+priima vieną kintamąjį
+jei perduotas kintamasis nėra skaičiaus tipo, tai išveda pranešimą “Pateikta netinkamo tipo reikšmė.”
+priešingu atveju, funkcija tęsia darbą
+į atskirą kintamąjį įsimena skaičių sudarančių skaitmenų kiekį
+gražina skaitmenų kiekį
+TESTAI:
+console.log( skaitmenuKiekisSkaiciuje( 5 ) );
+rezultatas: 1
+console.log( skaitmenuKiekisSkaiciuje( 781 ) );
+rezultatas: 3
+console.log( skaitmenuKiekisSkaiciuje( 37060123456 ) );
+rezultatas: 11
+console.log( skaitmenuKiekisSkaiciuje( true ) );
+rezultatas: “Pateikta netinkamo tipo reikšmė.”
+console.log( skaitmenuKiekisSkaiciuje( “asd” ) );
+rezultatas: “Pateikta netinkamo tipo reikšmė.”
+console.log( skaitmenuKiekisSkaiciuje( NaN ) );
+rezultatas: “Pateikta netinkamo tipo reikšmė.” */
+function skaitmenuKiekisSkaiciuje(number) {
+    if (typeof number !== "number" || !isFinite(number)) {
+        return `Pateikta netinkamo tipo reikšmė.`;
+    } else {
+        return ("" + number).length;
+    }
+}
+// console.log(skaitmenuKiekisSkaiciuje(5));
+// console.log(skaitmenuKiekisSkaiciuje(781));
+// console.log(skaitmenuKiekisSkaiciuje(37060123456));
+// console.log(skaitmenuKiekisSkaiciuje(true));
+// console.log(skaitmenuKiekisSkaiciuje("asd"));
+// console.log(skaitmenuKiekisSkaiciuje(NaN));
+
+/* 
+4. Funkcija pavadinimu “didziausiasSkaiciusSarase”:
+priima vieną kintamąjį
+jei perduotas kintamasis nėra sąrašo tipo, tai išveda pranešimą “Pateikta netinkamo tipo reikšmė.”
+jei sąrašas yra tuščias, tai išveda pranešimą “Pateiktas sąrašas negali būti tuščias.”
+priešingu atveju, funkcija tęsia darbą
+pereina per visą pateiktą sąrašą ir į atskirą kintamąjį įsimena skaičių, kuris tuo metu yra didžiausias
+gražina didžiausią surastą skaičių
+TESTAI:
+console.log( didziausiasSkaiciusSarase( [ 1 ] ) );
+rezultatas: 1
+console.log( didziausiasSkaiciusSarase( [ 1, 2, 3 ] ) );
+rezultatas: 3
+console.log( didziausiasSkaiciusSarase( [ -5, 78, 14, 0, 18 ] ) );
+rezultatas: 78
+console.log( didziausiasSkaiciusSarase( [ 69, 69, 69, 69, 66 ] ) );
+rezultatas: 69
+console.log( didziausiasSkaiciusSarase( [ -1, -2, -3, -4, -5, -6, -7, -8 ] ) );
+rezultatas: -1
+console.log( didziausiasSkaiciusSarase( “pomidoras” ) );
+rezultatas: “Pateikta netinkamo tipo reikšmė.”
+console.log( didziausiasSkaiciusSarase( [] ) );
+rezultatas: “Pateiktas sąrašas negali būti tuščias.” */
+
+function didziausiasSkaiciusSarase(numList) {
+    if (typeof numList !== "object") {
+        return `Pateikta netinkamo tipo reikšmė.`;
+    }
+    if (numList.length === 0) {
+        return `Pateiktas sąrašas negali būti tuščias.`;
+    }
+
+    let maxNum = numList[0];
+    for (let i = 0; i < numList.length; i++) {
+        if (maxNum < numList[i]) {
+            maxNum = numList[i];
+        }
+    }
+    return maxNum;
+}
+
+console.log(didziausiasSkaiciusSarase([1]));
+console.log(didziausiasSkaiciusSarase([1, 2, 3]));
+console.log(didziausiasSkaiciusSarase([-5, 78, 14, 0, 18]));
+console.log(didziausiasSkaiciusSarase([69, 69, 69, 69, 66]));
+console.log(didziausiasSkaiciusSarase([-1, -2, -3, -4, -5, -6, -7, -8]));
+console.log(didziausiasSkaiciusSarase("pomidoras"));
+console.log(didziausiasSkaiciusSarase([]));
 
 console.log("-----Ciklo for panaudojimas--------");
-// Suskaičiuoti ką gausime susumavus skaičius intervale tarp (imtinai):
+// 1. Suskaičiuoti ką gausime susumavus skaičius intervale tarp (imtinai):
 // 0 … 0
 // 0 … 4
 // 0 … 100
@@ -130,8 +211,10 @@ sum(574, 815);
 sum(-50, 50);
 sum(-70, 30);
 
-// panaudojant ciklą perrašyti tekstinio tipo kintamųjų reikšmes iš kito galo:
-// pvz.: “abcdef” -> “fedcba”
+/* 
+2.  panaudojant ciklą perrašyti tekstinio tipo kintamųjų reikšmes iš kito galo:
+pvz.: “abcdef” -> “fedcba” 
+*/
 
 function reverse(str) {
     let reversedString = "";
@@ -143,16 +226,18 @@ function reverse(str) {
 
 reverse("abcd");
 
-// Suskaičiuoti, kiek nurodytame intervale yra skaičių, kurie dalijasi be liekanos iš 3, 5 ir 7 atskirai:
+/* 
+3.  Suskaičiuoti, kiek nurodytame intervale yra skaičių, kurie dalijasi be liekanos iš 3, 5 ir 7 atskirai:
 
-// divNoRemainder
-// 0 - 11
-// 8 - 31
-// -18 - 18
-// rezultatą pateikti tokiu formatu:
-// Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 3 yra 4 vienetai.
-// Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 5 yra 3 vienetai.
-// Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 7 yra 2 vienetai.
+divNoRemainder
+0 - 11
+8 - 31
+-18 - 18
+rezultatą pateikti tokiu formatu:
+Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 3 yra 4 vienetai.
+Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 5 yra 3 vienetai.
+Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 7 yra 2 vienetai. 
+*/
 
 function divNoRemainder(numStart, numEnd, divider) {
     let numCounter = 0;
