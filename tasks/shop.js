@@ -54,16 +54,16 @@ function shop2(goods, currency) {
     console.log(" ----------------");
     let totalPrice = 0;
     for (let i = 0; i < prekes.length; i++) {
-        if (prekes[i].inStock === 0) {
-            console.log(`${prekes[i].name} kainuoja ${prekes[i].price.toFixed(2)} ${valiuta}. Prekes neturime sandelyje.`);
-            totalPrice += prekes[i].price * prekes[i].inStock;
+        if (goods[i].inStock === 0) {
+            console.log(`${goods[i].name} kainuoja ${goods[i].price.toFixed(2)} ${currency}. Prekes neturime sandelyje.`);
+            totalPrice += goods[i].price * goods[i].inStock;
         } else {
-            console.log(`${prekes[i].name} kainuoja ${prekes[i].price.toFixed(2)} ${valiuta} ir turime ju ${prekes[i].inStock} vienetu.`);
-            totalPrice += prekes[i].price * prekes[i].inStock;
+            console.log(`${goods[i].name} kainuoja ${goods[i].price.toFixed(2)} ${currency} ir turime ju ${goods[i].inStock} vienetu.`);
+            totalPrice += goods[i].price * goods[i].inStock;
         }
     }
     console.log("----------------");
-    console.log(`Viso asortimento kaina: ${totalPrice.toFixed(2)} ${valiuta}.`);
+    console.log(`Viso asortimento kaina: ${totalPrice.toFixed(2)} ${currency}.`);
 }
 
 shop2(prekes, valiuta);
