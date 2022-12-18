@@ -343,3 +343,4 @@ function nCalls(numStart, numEnd, dividers) {
 // nCalls(0, 11, dividers);
 // nCalls(8, 31, dividers);
 // nCalls(-18, 18, dividers);
+//  vieną ką padaryčiau, tai pervadinčiau validateRange -> isValidRange
