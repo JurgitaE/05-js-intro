@@ -1,13 +1,6 @@
 console.clear();
 /* 
-Sablonai:
-if() {}
-if() {} else {}
-if() {} else if () {}
-if() {} else if () {} else {}
-if() {} else if ()... else if {}
-if() {} else if ()... else if {} else {}
-
+IF - reiksmiu palyginimas; salyga tenkina/netenkina?
 
 Palyginimo Operatoriai:
 visi: >, <, <=, >=, ==, !=
@@ -17,6 +10,14 @@ NEnaudotini: ==, !=
 Loginiai operatoriai
 && - AND - turi tenkinti visas salygas
 || - OR - turi tenkinti bent viena salyga
+
+Sablonai:
+if() {}
+if() {} else {}
+if() {} else if () {}
+if() {} else if () {} else {}
+if() {} else if ()... else if {}
+if() {} else if ()... else if {} else {}
 */
 
 const a = 7;

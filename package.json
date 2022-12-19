@@ -4,8 +4,12 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "digitCount": "nodemon ./tasks/digitCount.js",
+        "rangeDivide": "nodemon ./tasks/rangeDivide.js",
+        "reverseString": "nodemon ./tasks/reverseString.js",
         "testing": "nodemon ./tasks/testing.js",
         "rangeSum": "nodemon ./tasks/rangeSum.js",
+        "hotpo": "nodemon ./codewars/hotpo.js",
         "joyful": "nodemon ./codewars/7-joyfullNums.js",
         "shop": "nodemon ./tasks/shop.js",
         "for": "nodemon ./js/10-for.js",
