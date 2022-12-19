@@ -90,3 +90,4 @@ divideWithoutRemainder(range1, dividers);
 // divideWithoutRemainder(range2, dividers);
 // divideWithoutRemainder(range3, dividers);
  */
+console.clear();
