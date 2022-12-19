@@ -9,6 +9,7 @@
         "reverseString": "nodemon ./tasks/reverseString.js",
         "testing": "nodemon ./tasks/testing.js",
         "rangeSum": "nodemon ./tasks/rangeSum.js",
+        "zeroFuel": "nodemon ./codewars/zeroFuel.js",
         "hotpo": "nodemon ./codewars/hotpo.js",
         "joyful": "nodemon ./codewars/7-joyfullNums.js",
         "shop": "nodemon ./tasks/shop.js",
