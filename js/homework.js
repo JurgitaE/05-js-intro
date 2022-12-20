@@ -172,16 +172,26 @@ console.log( didziausiasSkaiciusSarase( [] ) );
 rezultatas: “Pateiktas sąrašas negali būti tuščias.” 
 */
 
-function didziausiasSkaiciusSarase(numList) {
-    if (typeof numList !== "object") {
-        return `Pateikta netinkamo tipo reikšmė.`;
+function isValidNumber(numbersArray) {
+    for (let i = 0; i < numbersArray.length; i++) {
+        if (typeof numbersArray[i] === "number" && isFinite(numbersArray[i])) {
+            return numbersArray[i];
+        }
     }
-    if (numList.length === 0) {
-        return `Pateiktas sąrašas negali būti tuščias.`;
+    return "ERROR: there are no normal numbers in the array";
+}
+
+function biggestNumber(numList) {
+    if (!Array.isArray(numList)) {
+        return `ERROR: an array is required`;
+    }
+    if (numList.length < 1) {
+        return `ERROR: array cannot be empty.`;
     }
 
-    let maxNum = numList[0];
+    let maxNum = isValidNumber(numList);
     for (let i = 0; i < numList.length; i++) {
+        if (!isFinite(numList[i] || typeof numList[i] !== "number")) continue;
         if (maxNum < numList[i]) {
             maxNum = numList[i];
         }
@@ -189,13 +199,43 @@ function didziausiasSkaiciusSarase(numList) {
     return maxNum;
 }
 
-// console.log(didziausiasSkaiciusSarase([1]));
-// console.log(didziausiasSkaiciusSarase([1, 2, 3]));
-// console.log(didziausiasSkaiciusSarase([-5, 78, 14, 0, 18]));
-// console.log(didziausiasSkaiciusSarase([69, 69, 69, 69, 66]));
-// console.log(didziausiasSkaiciusSarase([-1, -2, -3, -4, -5, -6, -7, -8]));
-// console.log(didziausiasSkaiciusSarase("pomidoras"));
-// console.log(didziausiasSkaiciusSarase([]));
+// console.log(biggestNumber("pomidoras"));
+// console.log(biggestNumber(true));
+// console.log(biggestNumber());
+// console.log(biggestNumber(5));
+// console.log(biggestNumber(function () {}));
+// console.log(biggestNumber(null));
+// console.log(biggestNumber({}));
+// console.log(biggestNumber([]));
+
+// console.log(biggestNumber([0]), "-->", 0);
+// console.log(biggestNumber([1, 2, 3]), "-->", 3);
+// console.log(biggestNumber([-5, 78, 14, 0, 18]), "-->", 78);
+// console.log(biggestNumber([69, 69, 69, 69, 66]), "-->", 69);
+// console.log(biggestNumber([-1, -2, -3, -4, -5, -6, -7, -8]), "-->", -1);
+
+// console.log(biggestNumber([1, 2, 3, Infinity]), "-->", 3);
+// console.log(biggestNumber([1, 2, Infinity, 3]), "-->", 3);
+// console.log(biggestNumber([1, Infinity, 2, 3]), "-->", 3);
+// console.log(biggestNumber([Infinity, 1, 2, 3]), "-->", 3);
+
+// console.log(biggestNumber([1, 2, 3, NaN]), "-->", 3);
+// console.log(biggestNumber([1, 2, NaN, 3]), "-->", 3);
+// console.log(biggestNumber([1, NaN, 2, 3]), "-->", 3);
+// console.log(biggestNumber([NaN, 1, 2, 3]), "-->", 3);
+
+// console.log(biggestNumber([1, 2, 3, true]), "-->", 3);
+// console.log(biggestNumber([1, 2, true, 3]), "-->", 3);
+// console.log(biggestNumber([1, true, 2, 3]), "-->", 3);
+// console.log(biggestNumber([true, 0, -1, -2]), "-->", 0);
+
+// console.log(biggestNumber([1, 2, 3, "true"]), "-->", 3);
+// console.log(biggestNumber([1, 2, "true", 3]), "-->", 3);
+// console.log(biggestNumber([1, "true", 2, 3]), "-->", 3);
+// console.log(biggestNumber(["true", 0, -1, -2]), "-->", 0);
+
+// console.log(biggestNumber(["true", true, NaN, [], [5], Infinity, -Infinity, 0]), "-->", 0);
+// console.log(biggestNumber(["true", "true", NaN, [], [5], Infinity, -Infinity]));
 
 /* 
 5. Funkcija pavadinimu “isrinktiRaides”:
