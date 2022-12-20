@@ -13,6 +13,8 @@
         "hotpo": "nodemon ./codewars/hotpo.js",
         "joyful": "nodemon ./codewars/7-joyfullNums.js",
         "shop": "nodemon ./tasks/shop.js",
+        "spread": "nodemon ./js/14-spread.js",
+        "arrow": "nodemon ./js/13-arrow.js",
         "string-methods": "nodemon ./js/12-string-methods.js",
         "ternary": "nodemon ./js/11-ternary.js",
         "for": "nodemon ./js/10-for.js",
