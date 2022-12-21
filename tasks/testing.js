@@ -92,11 +92,21 @@ divideWithoutRemainder(range1, dividers);
  */
 console.clear();
 
-function arrayDiff(a, b) {
-    // [b] = b;
-    // console.log(b);
-
-    return a.filter((c) => b.indexOf(c) === -1);
+function sumArray(array) {
+    let countMin = 0;
+    let countMax = 0;
+    if (!Array.isArray(array)) return 0;
+    if (array.length >= 3) {
+        return array
+            .filter((a) => {
+                countMax++;
+                return a !== Math.max(...array) && countMax;
+            })
+            .filter((a) => a !== Math.min(...array))
+            .reduce((a, b) => a + b);
+    } else {
+        return 0;
+    }
 }
 
-console.log(arrayDiff([2, 3], [2]));
+console.log(sumArray([0, 1, 6, 10, 10]));
