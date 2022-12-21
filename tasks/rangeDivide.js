@@ -65,20 +65,48 @@ function rangeDivide(from, to, divider) {
 // console.log(rangeDivide(-18, 18, 5), '->', 'Skaičių intervale tarp -18 ir 18, besidalijančių be liekanos iš 5 yra 7 vienetai.');
 // console.log(rangeDivide(-18, 18, 7), '->', 'Skaičių intervale tarp -18 ir 18, besidalijančių be liekanos iš 7 yra 5 vienetai.');
 
-console.log(rangeDivide(0, 11, 3), "->", 4);
-console.log(rangeDivide(0, 11, 5), "->", 3);
-console.log(rangeDivide(0, 11, 7), "->", 2);
-console.log(rangeDivide(8, 31, 3), "->", 8);
-console.log(rangeDivide(8, 31, 5), "->", 5);
-console.log(rangeDivide(8, 31, 7), "->", 3);
-console.log(rangeDivide(-18, 18, 3), "->", 13);
-console.log(rangeDivide(-18, 18, 5), "->", 7);
-console.log(rangeDivide(-18, 18, 7), "->", 5);
+// console.log(rangeDivide(0, 11, 3), '->', 4);
+// console.log(rangeDivide(0, 11, 5), '->', 3);
+// console.log(rangeDivide(0, 11, 7), '->', 2);
+// console.log(rangeDivide(8, 31, 3), '->', 8);
+// console.log(rangeDivide(8, 31, 5), '->', 5);
+// console.log(rangeDivide(8, 31, 7), '->', 3);
+// console.log(rangeDivide(-18, 18, 3), '->', 13);
+// console.log(rangeDivide(-18, 18, 5), '->', 7);
+// console.log(rangeDivide(-18, 18, 7), '->', 5);
 
-console.log(rangeDivide(-18, 18, 0), "->", 0);
-console.log(rangeDivide(-18, 18, -7), "->", 5);
+// console.log(rangeDivide(-18, 18, 0), '->', 0);
+// console.log(rangeDivide(-18, 18, -7), '->', 5);
 
-console.log(rangeDivide(18, -18, 7), "->", 5);
-console.log(rangeDivide(-2, 2, 0.5), "->", 9);
-console.log(rangeDivide(-2.5, 3.5, 2), "->", 3);
-console.log(rangeDivide(-1_000_000_000, 1_000_000_000, 2), "->", 1_000_000_001);
+// console.log(rangeDivide(18, -18, 7), '->', 5);
+// console.log(rangeDivide(-2, 2, 0.5), '->', 9);
+// console.log(rangeDivide(-2.5, 3.5, 2), '->', 3);
+// console.log(rangeDivide(-1_000_000_000, 1_000_000_000, 2), '->', 1_000_000_001);
+
+function divideRange(from, to, divider) {
+    if (from > to) {
+        [from, to] = [to, from];
+    }
+
+    let counter = 0;
+
+    if (from <= 0 && to >= 0) {
+        counter++;
+    }
+
+    if ((to >= 0 && from >= 0) || (to <= 0 && from <= 0)) {
+        return Math.floor(Math.abs(to) / divider) - Math.floor(Math.abs(from) / divider) + counter;
+    } else {
+        return Math.floor(Math.abs(to) / divider) + Math.floor(Math.abs(from) / divider) + counter;
+    }
+}
+
+// console.log(divideRange(0, 11, 3));
+// console.log(divideRange(0, 11, 5));
+// console.log(divideRange(0, 11, 7));
+console.log(divideRange(8, 31, 3));
+// console.log(divideRange(8, 31, 5));
+// console.log(divideRange(8, 31, 7));
+console.log(divideRange(-18, 18, 3));
+console.log(divideRange(-18, 18, 5));
+console.log(divideRange(0, 5, 1));

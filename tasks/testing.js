@@ -91,10 +91,12 @@ divideWithoutRemainder(range1, dividers);
 // divideWithoutRemainder(range3, dividers);
  */
 console.clear();
-function findShort(s) {
-    const strLength = s.split(" ").map((a) => a.length);
-    console.log(Math.max(...s.split(" ").map((a) => a.length)));
 
-    // return Math.max(...s.split("").map((a) => a.length));
+function arrayDiff(a, b) {
+    // [b] = b;
+    // console.log(b);
+
+    return a.filter((c) => b.indexOf(c) === -1);
 }
-findShort("grazi diena");
+
+console.log(arrayDiff([2, 3], [2]));
