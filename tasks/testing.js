@@ -92,21 +92,12 @@ divideWithoutRemainder(range1, dividers);
  */
 console.clear();
 
-function sumArray(array) {
-    let countMin = 0;
-    let countMax = 0;
-    if (!Array.isArray(array)) return 0;
-    if (array.length >= 3) {
-        return array
-            .filter((a) => {
-                countMax++;
-                return a !== Math.max(...array) && countMax;
-            })
-            .filter((a) => a !== Math.min(...array))
-            .reduce((a, b) => a + b);
-    } else {
-        return 0;
-    }
-}
+String.prototype.toJadenCase = function () {
+    let str = this.valueOf(this);
+    return str
+        .split(" ")
+        .map((a) => a.replace(a[0], a[0].toLocaleUpperCase()))
+        .join(" ");
+};
 
-console.log(sumArray([0, 1, 6, 10, 10]));
+console.log("you suck".toJadenCase());

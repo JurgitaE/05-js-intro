@@ -10,6 +10,7 @@
         "biggestNumber": "nodemon ./tasks/biggestNumber.js",
         "testing": "nodemon ./tasks/testing.js",
         "rangeSum": "nodemon ./tasks/rangeSum.js",
+        "jadenCasingStrings": "nodemon ./codewars/jadenCasingStrings.js",
         "zeroFuel": "nodemon ./codewars/zeroFuel.js",
         "hotpo": "nodemon ./codewars/hotpo.js",
         "joyful": "nodemon ./codewars/7-joyfullNums.js",
