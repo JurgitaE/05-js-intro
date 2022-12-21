@@ -1,4 +1,5 @@
 console.clear();
+// https://www.codewars.com/kata/525f50e3b73515a6db000b83/javascript
 function createPhoneNumber(arr) {
     const joinedArr = arr.join("");
     return `(${joinedArr.slice(0, 3)}) ${joinedArr.slice(3, 6)}-${joinedArr.slice(6)}`;
