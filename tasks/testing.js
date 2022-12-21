@@ -92,12 +92,14 @@ divideWithoutRemainder(range1, dividers);
  */
 console.clear();
 
-String.prototype.toJadenCase = function () {
-    let str = this.valueOf(this);
-    return str
-        .split(" ")
-        .map((a) => a.replace(a[0], a[0].toLocaleUpperCase()))
-        .join(" ");
-};
+// function createPhoneNumber(arr) {
+//     const joinedArr = arr.join("");
+//     return `(${joinedArr.slice(0, 3)}) ${joinedArr.slice(3, 6)}-${joinedArr.slice(6)}`;
+// }
 
-console.log("you suck".toJadenCase());
+function createPhoneNumber(arr) {
+    let pattern = "(xxx) xxx-xxxx";
+    arr.forEach((a) => (pattern = pattern.replace("x", a)));
+    return pattern;
+}
+console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
