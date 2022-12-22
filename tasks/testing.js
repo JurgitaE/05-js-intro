@@ -101,20 +101,26 @@ if x < y: 0 points (loss)
 if x = y: 1 point (tie)
  */
 function isValidWalk(walk) {
-    let arr = [...new Set(walk)];
-    if (arr.length !== 2) {
-        return false;
+    let counter = {
+        w: 0,
+        e: 0,
+        s: 0,
+        n: 0,
+    };
+    walk.reduce((acc, cur) => {
+        counter[cur] += 1;
+    }, 0);
+    // console.log(counter);
+    // console.log([...Object.values(counter)]);
+
+    if (counter.w === counter.e && counter.s === counter.n) {
+        if (counter.w + counter.s === 5) {
+            return true;
+        }
     }
-    let firstCount = 0;
-    let secondCount = 0;
-    walk.reduce((cur, acc) => (arr[0] === acc ? firstCount++ : firstCount), 0);
-    walk.reduce((cur, acc) => (arr[1] === acc ? secondCount++ : secondCount), 0);
-    if (firstCount === secondCount && firstCount === 5) {
-        return true;
-    }
-    console.log(firstCount, secondCount);
-    console.log("not valid");
     return false;
 }
+
+// return
 // isValidWalk(['n','s','n','s','n','s','n','s','n','s']);
-console.log(isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "e", "w", "e"]));
+console.log(isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "e"]));
