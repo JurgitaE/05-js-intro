@@ -91,15 +91,30 @@ divideWithoutRemainder(range1, dividers);
 // divideWithoutRemainder(range3, dividers);
  */
 console.clear();
+/* 
+For example: ["3:1", "2:2", "0:1", ...]
 
-// function createPhoneNumber(arr) {
-//     const joinedArr = arr.join("");
-//     return `(${joinedArr.slice(0, 3)}) ${joinedArr.slice(3, 6)}-${joinedArr.slice(6)}`;
-// }
+Points are awarded for each match as follows:
 
-function createPhoneNumber(arr) {
-    let pattern = "(xxx) xxx-xxxx";
-    arr.forEach((a) => (pattern = pattern.replace("x", a)));
-    return pattern;
+if x > y: 3 points (win)
+if x < y: 0 points (loss)
+if x = y: 1 point (tie)
+ */
+function isValidWalk(walk) {
+    let arr = [...new Set(walk)];
+    if (arr.length !== 2) {
+        return false;
+    }
+    let firstCount = 0;
+    let secondCount = 0;
+    walk.reduce((cur, acc) => (arr[0] === acc ? firstCount++ : firstCount), 0);
+    walk.reduce((cur, acc) => (arr[1] === acc ? secondCount++ : secondCount), 0);
+    if (firstCount === secondCount && firstCount === 5) {
+        return true;
+    }
+    console.log(firstCount, secondCount);
+    console.log("not valid");
+    return false;
 }
-console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+// isValidWalk(['n','s','n','s','n','s','n','s','n','s']);
+console.log(isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "e", "w", "e"]));

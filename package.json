@@ -16,6 +16,7 @@
         "hotpo": "nodemon ./codewars/hotpo.js",
         "joyful": "nodemon ./codewars/7-joyfullNums.js",
         "shop": "nodemon ./tasks/shop.js",
+        "filter": "nodemon ./js/18-filter.js",
         "map": "nodemon ./js/17-map.js",
         "loops": "nodemon ./js/16-loops.js",
         "rest": "nodemon ./js/15-rest.js",
