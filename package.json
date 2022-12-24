@@ -12,6 +12,7 @@
         "rangeSum": "nodemon ./tasks/rangeSum.js",
         "6-createPhoneNumber": "nodemon ./codewars/6-createPhoneNumber.js",
         "jadenCasingStrings": "nodemon ./codewars/jadenCasingStrings.js",
+        "6-multiples-3-5": "nodemon ./codewars/6-multiples-3-5.js",
         "zeroFuel": "nodemon ./codewars/zeroFuel.js",
         "hotpo": "nodemon ./codewars/hotpo.js",
         "joyful": "nodemon ./codewars/7-joyfullNums.js",

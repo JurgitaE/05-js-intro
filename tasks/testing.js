@@ -93,34 +93,62 @@ divideWithoutRemainder(range1, dividers);
 console.clear();
 /* 
 For example: ["3:1", "2:2", "0:1", ...]
+*/
 
-Points are awarded for each match as follows:
+// function longest(a, b) {
+//     let abcRemain = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+//     let arrA = [...new Set(a)].sort();
+//     let arrB = [...new Set(b)].sort();
 
-if x > y: 3 points (win)
-if x < y: 0 points (loss)
-if x = y: 1 point (tie)
- */
-function isValidWalk(walk) {
-    let counter = {
-        w: 0,
-        e: 0,
-        s: 0,
-        n: 0,
-    };
-    walk.reduce((acc, cur) => {
-        counter[cur] += 1;
-    }, 0);
-    // console.log(counter);
-    // console.log([...Object.values(counter)]);
+//     function streak(arr) {
+//         let streak = "";
+//         arr.forEach((a) => {
+//             abcRemain.includes(a) ? (streak += a) : streak;
+//             abcRemain = abcRemain.slice(abcRemain.indexOf(a));
+//         });
+//         return streak;
+//     }
+//     console.log(streak(arrA));
 
-    if (counter.w === counter.e && counter.s === counter.n) {
-        if (counter.w + counter.s === 5) {
-            return true;
-        }
-    }
-    return false;
+//     // arrA.forEach((a) => {
+//     //     abcRemain.includes(a) ? (aStreak += a) : aStreak;
+//     //     abcRemain = abcRemain.slice(abcRemain.indexOf(a));
+//     // });
+//     // return aStreak;
+// }
+// longest("xyaabbbccccdefww", "xxxxyyyyabklmopq");
+// // console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding"));
+console.clear();
+// /*
+//             1               2-0 n-1                         1 = 2**0
+//           3     5           2-3 n-2     2+1                 3   = 2**2 - 1
+//        7     9    11        2-6 n-3     3+(2+1) +           7   = 2**3 - 1
+//    13    15    17    19     2-30 n-4    4 +                 13  = 2**4 - 3
+// 21    23    25    27    29  2-60 n=5
+//  */
+// function line(n) {
+//     let sum = 0;
+//     let accumulator = 1;
+
+//     for (let i = 1; i <= n; i++) {
+//         accumulator += (n - 1) * 2;
+//     }
+//     console.log(accumulator);
+// }
+
+// line(1);
+// line(2);
+// line(3);
+// line(4);
+console.clear();
+
+function solution(number) {
+    if (number <= 2) return 0;
+
+    return Array(number - 3)
+        .fill(3)
+        .map((a, index, arr) => (arr[index - 1] ? arr[index - 1] + index : a))
+        .filter((a) => a % 3 === 0 || a % 5 === 0)
+        .reduce((acc, cur) => acc + cur, 0);
 }
-
-// return
-// isValidWalk(['n','s','n','s','n','s','n','s','n','s']);
-console.log(isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "e"]));
+console.log(solution(10));
