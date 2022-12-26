@@ -4,7 +4,7 @@ LOOP - ciklas
 
 tevas -> for
 vaikai (isvestiniai) -> while, for-of, for-in, foreach
-next-level -> map, sort, filter, reduce, ...
+next-level (HOF - higher order function) -> map, sort, filter, reduce, ...
 */
 
 const marks = [10, 2, 8, 4, 6];
