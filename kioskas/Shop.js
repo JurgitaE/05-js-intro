@@ -84,7 +84,9 @@ class Shop {
     shopSummary() {
         const closedOrders = this.carts.filter((a) => a.payment === true);
         const countSold = closedOrders.reduce((t, q) => t + q.items.reduce((t2, q2) => t2 + q2.count, 0), 0);
+        const profitCalc = closedOrders.reduce((t, p) => t + this.orderPrice(p.owner), 0);
 
+        console.log(profitCalc);
         // console.log(`Summary for the "${this.name}"`);
         console.log("====================");
         console.log(`Items sold: ${countSold}`);
