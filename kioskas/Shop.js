@@ -38,7 +38,11 @@ class Shop {
     }
     addItemToCart(buyer, productNo, quantity) {
         const cartOwned = this.carts.find((a) => a.owner === buyer);
-        cartOwned.items.push({ id: productNo, count: quantity });
+        if (!cartOwned.payment) {
+            cartOwned.items.push({ id: productNo, count: quantity });
+        } else {
+            console.log(` You can not add items to already paid cart!`);
+        }
     }
     order(buyer) {
         console.log(this.carts.find((a) => a.owner === buyer));
@@ -56,17 +60,17 @@ class Shop {
         console.log(`No more ${item} at "${this.name}"!`);
     }
     pay(buyer, money) {
+        const cartOwned = this.carts.find((a) => a.owner === buyer);
         const total = this.orderPrice(buyer);
         if (total > money) {
             console.log("Need more money!");
-            return false;
         } else if (money > total) {
             console.log(`Here is your ${((money - total) / 100).toFixed(2)} EUR change!\nThank you for purchasing at "${this.name}"!`);
-            return true;
+            cartOwned.payment = true;
         } else {
             console.log(`Thank you for purchasing at "${this.name}"!`);
+            cartOwned.payment = true;
         }
-        return true;
     }
 }
 
