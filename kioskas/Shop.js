@@ -82,16 +82,19 @@ class Shop {
         }
     }
     shopSummary() {
-        const closedOrders = this.carts.filter((a) => a.payment === true);
+        const closedOrders = this.carts.filter((a) => a.payment);
         const countSold = closedOrders.reduce((t, q) => t + q.items.reduce((t2, q2) => t2 + q2.count, 0), 0);
         const profitCalc = closedOrders.reduce((t, p) => t + this.orderPrice(p.owner), 0);
 
-        console.log(profitCalc);
-        // console.log(`Summary for the "${this.name}"`);
+        const openOrders = this.carts.filter((a) => !a.payment);
+        const potentialProfit = openOrders.reduce((t, p) => t + this.orderPrice(p.owner), 0);
+
         console.log("====================");
         console.log(`Items sold: ${countSold}`);
         console.log(`Orders completed: ${closedOrders.length}`);
         console.log(`Orders in progress: ${this.carts.length - closedOrders.length}`);
+        console.log(`Profit: ${(profitCalc / 100).toFixed(2)} ${this.currency}`);
+        console.log(`Possible profit: ${(potentialProfit / 100).toFixed(2)} ${this.currency}`);
         console.log("====================");
     }
 }
