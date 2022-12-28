@@ -88,6 +88,8 @@ class Shop {
         // console.log(`Summary for the "${this.name}"`);
         console.log("====================");
         console.log(`Items sold: ${countSold}`);
+        console.log(`Orders completed: ${closedOrders.length}`);
+        console.log(`Orders in progress: ${this.carts.length - closedOrders.length}`);
         console.log("====================");
     }
 }
