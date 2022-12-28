@@ -99,14 +99,15 @@ onlineKioskas.pay("Barbora", 550);
 onlineKioskas.addItemToCart("Augustas", 3, 1);
 // You can not add items to already paid cart!
 
-// onlineKioskas.createCart("John");
+onlineKioskas.createCart("John");
 // John have an open cart at "Meskiuko kioskas"!
 
-// onlineKioskas.addItemToCart("John", 3, 1);
-// onlineKioskas.addItemToCart("John", 4, 2);
-// onlineKioskas.addItemToCart("John", 5, 1);
+onlineKioskas.addItemToCart("John", 3, 1);
+onlineKioskas.addItemToCart("John", 4, 2);
+onlineKioskas.addItemToCart("John", 5, 1);
+onlineKioskas.order("John");
 
-// onlineKioskas.addItemToCart("John", 1, 1);
+onlineKioskas.addItemToCart("John", 1, 1);
 // Item is out of stock!
 
 // onlineKioskas.order("John");

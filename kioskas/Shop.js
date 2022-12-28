@@ -5,7 +5,7 @@ class Shop {
         this.products = [];
         this.prices = [];
         this.availability = [];
-        this.carts = [];
+        this.carts = [{ owner: "John", items: [] }];
     }
     intro() {
         console.log(`Hi, we are "${this.name}".\nUse .items() method to get list of items to purchase.\nUse .order() method to get your order details.`);
@@ -33,13 +33,22 @@ class Shop {
         this.prices[this.products.indexOf(product)] = price;
     }
     createCart(buyer) {
-        this.carts.push({ owner: buyer, items: [] });
-        console.log(`${buyer} have an open cart at "${this.name}"!`);
+        const cartOwned = this.carts.find((a) => a.owner === buyer);
+        if (!cartOwned) {
+            this.carts.push({ owner: buyer, items: [] });
+            console.log(`${buyer} have an open cart at "${this.name}"!`);
+        } else {
+            console.log(`${buyer} have an open cart at "${this.name}"!`);
+        }
     }
     addItemToCart(buyer, productNo, quantity) {
         const cartOwned = this.carts.find((a) => a.owner === buyer);
         if (!cartOwned.payment) {
-            cartOwned.items.push({ id: productNo, count: quantity });
+            if (this.availability[productNo - 1]) {
+                cartOwned.items.push({ id: productNo, count: quantity });
+            } else {
+                console.log(`Item is out of stock!`);
+            }
         } else {
             console.log(` You can not add items to already paid cart!`);
         }
