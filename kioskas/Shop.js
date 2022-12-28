@@ -60,7 +60,7 @@ class Shop {
         const cartOwned = this.carts.find((a) => a.owner === buyer);
 
         const total = cartOwned.items.reduce((acc, cur) => acc + this.prices[cur.id - 1] * cur.count, 0);
-        console.log(`${buyer} order: ${(total / 100).toFixed(2)} ${this.currency}`);
+        console.log(`${buyer} order: ${(total / 100).toFixed(2)} ${this.currency}.`);
         return total;
     }
     removeItem(item) {
@@ -80,6 +80,15 @@ class Shop {
             console.log(`Thank you for purchasing at "${this.name}"!`);
             cartOwned.payment = true;
         }
+    }
+    shopSummary() {
+        const closedOrders = this.carts.filter((a) => a.payment === true);
+        const countSold = closedOrders.reduce((t, q) => t + q.items.reduce((t2, q2) => t2 + q2.count, 0), 0);
+
+        // console.log(`Summary for the "${this.name}"`);
+        console.log("====================");
+        console.log(`Items sold: ${countSold}`);
+        console.log("====================");
     }
 }
 

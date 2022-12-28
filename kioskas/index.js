@@ -110,7 +110,7 @@ onlineKioskas.order("John");
 onlineKioskas.addItemToCart("John", 1, 1);
 // Item is out of stock!
 
-// onlineKioskas.order("John");
+onlineKioskas.order("John");
 /*
 {
     owner: 'John',
@@ -124,10 +124,10 @@ onlineKioskas.addItemToCart("John", 1, 1);
 
 // onlineKioskas.items();
 
-// onlineKioskas.orderPrice("John");
+onlineKioskas.orderPrice("John");
 // Augustas order: 4.70 EUR.
-
-// onlineKioskas.shopSummary();
+console.clear();
+onlineKioskas.shopSummary();
 // Summary for the "Meskiuko kioskas"
 // ====================
 // Items sold: 12
@@ -136,3 +136,4 @@ onlineKioskas.addItemToCart("John", 1, 1);
 // Profit: 10.80 EUR
 // Possible profit: 5.60 EUR
 // ====================
+// console.log(onlineKioskas.carts);
