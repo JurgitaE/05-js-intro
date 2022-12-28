@@ -59,9 +59,14 @@ class Shop {
         const total = this.orderPrice(buyer);
         if (total > money) {
             console.log("Need more money!");
+            return false;
+        } else if (money > total) {
+            console.log(`Here is your ${((money - total) / 100).toFixed(2)} EUR change!\nThank you for purchasing at "${this.name}"!`);
+            return true;
         } else {
-            // console.log(`Here is your ${} EUR change!\nThank you for purchasing at "Meskiuko kioskas"!`);
+            console.log(`Thank you for purchasing at "${this.name}"!`);
         }
+        return true;
     }
 }
 
