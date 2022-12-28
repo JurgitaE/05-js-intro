@@ -56,10 +56,18 @@ class Shop {
     order(buyer) {
         console.log(this.carts.find((a) => a.owner === buyer));
     }
+    orderTotal(buyer) {
+        const cartOwned = this.carts.find((a) => a.owner === buyer);
+
+        const total = cartOwned.items.reduce((acc, cur) => acc + this.prices[cur.id - 1] * cur.count, 0);
+
+        return total;
+    }
     orderPrice(buyer) {
         const cartOwned = this.carts.find((a) => a.owner === buyer);
 
         const total = cartOwned.items.reduce((acc, cur) => acc + this.prices[cur.id - 1] * cur.count, 0);
+
         console.log(`${buyer} order: ${(total / 100).toFixed(2)} ${this.currency}.`);
         return total;
     }
@@ -70,7 +78,7 @@ class Shop {
     }
     pay(buyer, money) {
         const cartOwned = this.carts.find((a) => a.owner === buyer);
-        const total = this.orderPrice(buyer);
+        const total = this.orderTotal(buyer);
         if (total > money) {
             console.log("Need more money!");
         } else if (money > total) {
@@ -84,10 +92,10 @@ class Shop {
     shopSummary() {
         const closedOrders = this.carts.filter((a) => a.payment);
         const countSold = closedOrders.reduce((t, q) => t + q.items.reduce((t2, q2) => t2 + q2.count, 0), 0);
-        const profitCalc = closedOrders.reduce((t, p) => t + this.orderPrice(p.owner), 0);
+        const profitCalc = closedOrders.reduce((t, p) => t + this.orderTotal(p.owner), 0);
 
         const openOrders = this.carts.filter((a) => !a.payment);
-        const potentialProfit = openOrders.reduce((t, p) => t + this.orderPrice(p.owner), 0);
+        const potentialProfit = openOrders.reduce((t, p) => t + this.orderTotal(p.owner), 0);
 
         console.log("====================");
         console.log(`Items sold: ${countSold}`);

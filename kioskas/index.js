@@ -1,12 +1,11 @@
-console.clear();
 // komentarai, kurie prasideda "KOMENTARAS" nera spausdinami i console 🎅🚀📚
 
 import { Shop } from "./Shop.js";
 
 const onlineKioskas = new Shop("Meskiuko kioskas", "EUR");
 
-// onlineKioskas.intro();
-//Hi, we are "Meskiuko kioskas".\nUse .items() method to get list of items to purchase.\nUse .order() method to get your order details.
+onlineKioskas.intro();
+// Hi, we are "Meskiuko kioskas".\nUse .items() method to get list of items to purchase.\nUse .order() method to get your order details.
 
 onlineKioskas.addItem("obuolys", 130);
 // KOMENTARAS: pavadinimas mazosiomis
@@ -37,12 +36,13 @@ onlineKioskas.items();
 
 onlineKioskas.updatePrice("bulves", 90);
 // "Meskiuko kioskas" updated price and sells bulves for 0.90 EUR now!
-console.log(onlineKioskas.prices);
+
 onlineKioskas.createCart("Augustas");
 // Augustas have an open cart at "Meskiuko kioskas"!
 
 onlineKioskas.createCart("Barbora");
 // Barbora have an open cart at "Meskiuko kioskas"!
+
 onlineKioskas.addItemToCart("Augustas", 2, 1);
 onlineKioskas.addItemToCart("Augustas", 4, 2);
 onlineKioskas.addItemToCart("Augustas", 5, 1);
@@ -51,7 +51,7 @@ onlineKioskas.addItemToCart("Barbora", 1, 2);
 onlineKioskas.addItemToCart("Barbora", 3, 1);
 onlineKioskas.addItemToCart("Barbora", 5, 1);
 
-// onlineKioskas.order("Augustas");
+onlineKioskas.order("Augustas");
 /*
 {
     owner: 'Augustas',
@@ -105,7 +105,6 @@ onlineKioskas.createCart("John");
 onlineKioskas.addItemToCart("John", 3, 1);
 onlineKioskas.addItemToCart("John", 4, 2);
 onlineKioskas.addItemToCart("John", 5, 1);
-onlineKioskas.order("John");
 
 onlineKioskas.addItemToCart("John", 1, 1);
 // Item is out of stock!
@@ -122,18 +121,17 @@ onlineKioskas.order("John");
 }
 */
 
-// onlineKioskas.items();
+onlineKioskas.items();
 
 onlineKioskas.orderPrice("John");
 // Augustas order: 4.70 EUR.
-console.clear();
+
 onlineKioskas.shopSummary();
 // Summary for the "Meskiuko kioskas"
 // ====================
-// Items sold: 12
+// Items sold: 8
 // Orders completed: 2
 // Orders in progress: 1
 // Profit: 10.80 EUR
 // Possible profit: 5.60 EUR
 // ====================
-// console.log(onlineKioskas.carts);
