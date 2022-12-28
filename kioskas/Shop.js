@@ -60,7 +60,7 @@ class Shop {
         if (total > money) {
             console.log("Need more money!");
         } else {
-            console.log(`Here is your ${} EUR change!\nThank you for purchasing at "Meskiuko kioskas"!`);
+            // console.log(`Here is your ${} EUR change!\nThank you for purchasing at "Meskiuko kioskas"!`);
         }
     }
 }
