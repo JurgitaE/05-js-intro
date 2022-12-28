@@ -9,7 +9,11 @@ class Student {
 
     // Metodas, itraukiant nauja pazymi
     addMark(mark) {
+        if (typeof mark !== "number" || !isFinite(mark) || mark < 1 || mark > 10 || mark % 1 !== 0) {
+            return "Error";
+        }
         this.marks.push(mark);
+        return "OK";
     }
 
     marksAverage() {

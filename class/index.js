@@ -14,6 +14,8 @@ petras.addMark(3.14);
 petras.addMark(-3.14);
 petras.addMark(4);
 petras.addMark(6);
+petras.addMark(NaN);
 
 console.log(petras.name, petras.marksAverage());
 console.log(petras.name, petras.marksAverage2());
+console.log();

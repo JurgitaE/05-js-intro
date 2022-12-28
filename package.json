@@ -39,6 +39,7 @@
         "boolean": "nodemon ./js/04-boolean.js",
         "strings": "nodemon ./js/03-strings.js",
         "numbers": "nodemon ./js/02-numbers.js",
+        "kioskas": "nodemon ./kioskas/index.js",
         "labas": "nodemon ./js/01-labas.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
