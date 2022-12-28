@@ -1,12 +1,19 @@
 console.clear();
-// const Student = require("./Students"); -Old way
-import Student from "./Student.js";
-import SimpleStudent from "./Student2.js";
 
-const petras = new Student("Petras", 2000, true);
-const maryte = new SimpleStudent("Maryte", 1980, false);
+import { Student } from "./Student.js";
 
-console.log(petras);
-console.log(petras.name, petras.marks);
-console.log(maryte);
-console.log(maryte.name, maryte.marks);
+const petras = new Student("Petras", 2000);
+
+petras.addMark(10);
+petras.addMark(0);
+petras.addMark(2);
+petras.addMark(22);
+petras.addMark(-22);
+petras.addMark(8);
+petras.addMark(3.14);
+petras.addMark(-3.14);
+petras.addMark(4);
+petras.addMark(6);
+
+console.log(petras.name, petras.marksAverage());
+console.log(petras.name, petras.marksAverage2());
