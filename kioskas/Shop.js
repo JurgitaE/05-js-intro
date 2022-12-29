@@ -22,10 +22,12 @@ class Shop {
         console.log(`Items for sale at "${this.name}":`);
         console.log(`====================`);
         for (let i = 0; i < this.products.length; i++) {
-            if (this.availability[i]) {
-                console.log(`${counter}) ${this.products[i][0].toUpperCase() + this.products[i].slice(1)} - ${(this.prices[i] / 100).toFixed(2)} ${this.currency};`);
-                counter++;
-            }
+            console.log(
+                `${counter}) ${this.products[i][0].toUpperCase() + this.products[i].slice(1)} - ${(this.prices[i] / 100).toFixed(2)} ${this.currency} ${
+                    !this.availability[i] ? " - item is sold out" : ""
+                }`
+            );
+            counter++;
         }
         console.log(`====================`);
     }
@@ -58,9 +60,7 @@ class Shop {
     }
     orderTotal(buyer) {
         const cartOwned = this.carts.find((a) => a.owner === buyer);
-
         const total = cartOwned.items.reduce((acc, cur) => acc + this.prices[cur.id - 1] * cur.count, 0);
-
         return total;
     }
     orderPrice(buyer) {

@@ -1,6 +1,6 @@
-console.clear();
-function preFizz(n) {
-    return [...Array(n).keys()].map((a, i) => 1 + i);
+function stringClean(s) {
+    return [...s].filter((a) => !"012345678".includes(a)).join("");
 }
 
-console.log(preFizz(1));
+console.log(stringClean("E3at m2e2!!"));
+console.log(stringClean("123456789"));

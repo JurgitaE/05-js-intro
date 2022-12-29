@@ -1,5 +1,5 @@
 // komentarai, kurie prasideda "KOMENTARAS" nera spausdinami i console 🎅🚀📚
-
+console.clear();
 import { Shop } from "./Shop.js";
 
 const onlineKioskas = new Shop("Meskiuko kioskas", "EUR");
