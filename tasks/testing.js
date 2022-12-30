@@ -1,6 +1,4 @@
-function stringClean(s) {
-    return [...s].filter((a) => !"012345678".includes(a)).join("");
+console.clear();
+function isVow(a) {
+    console.log(a.map((b) => ("aeoiu".includes(String.fromCharCode(b)) ? String.fromCharCode(b) : b)));
 }
-
-console.log(stringClean("E3at m2e2!!"));
-console.log(stringClean("123456789"));
