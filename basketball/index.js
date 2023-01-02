@@ -15,7 +15,7 @@ game.wannaBePlayer("Wet-Fire", 50);
 game.wannaBePlayer("Chromos", 95);
 game.wannaBePlayer("White Mamba", 105);
 game.wannaBePlayer("Arachnneka", 195);
-console.log(game);
+// console.log(game);
 game.createTeam("Goon Squad");
 // A "Goon Squad" just entered a game!
 
