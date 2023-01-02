@@ -21,7 +21,7 @@ game.createTeam("Goon Squad");
 
 game.createTeam("Monstars");
 // A "Monstars" just entered a game!
-
+// console.log(game);
 // team id, player id
 game.buyPlayer(1, 1);
 // "Goon Squad" team just acquired new player Lola Bunny for 200 cash/year!
