@@ -3,6 +3,7 @@ class Basketball {
         this.league = name;
         this.playerList = [];
         this.teams = [];
+        this.games = {};
     }
     wannaBePlayer(name, cost) {
         this.playerList.push({ player: name, price: cost });
@@ -11,9 +12,11 @@ class Basketball {
         this.teams.push({ team: name, players: [] });
         console.log(`A "${name}" just entered a game!`);
     }
+
     buyPlayer(teamNo, playerNo) {
+        // atkreipt demesi, kad supushintas obj is playerList i team, todel teamse randa obj su includes metodu, kadangi same ref
         if (this.teams[teamNo - 1].players.includes(this.playerList[playerNo - 1])) {
-            console.log(`"${this.teams.team}" team can't add the same player twice!`);
+            console.log(`"${this.teams[teamNo - 1].team}" team can't add the same player twice!`);
         } else if (this.teams[teamNo - 1].players.length === 3) {
             console.log(`"${this.teams[teamNo - 1].team}" team can't add extra players to it's team.\nMaximum players per team is 3.`);
         } else {
@@ -27,6 +30,25 @@ class Basketball {
         const total = this.teams[teamNo - 1].players.reduce((acc, cur) => acc + cur.price, 0);
         console.log(`"${this.teams[teamNo - 1].team}" team is paying ${total} cash/year for it's players.`);
     }
+    letsPlay(team1, team2) {
+        console.log(`New game everybody!\n"${this.teams[team1 - 1].team}" vs. "${this.teams[team2 - 1].team}"`);
+
+        if (!this.games[this.teams[team1 - 1].team] && !this.games[this.teams[team2 - 1].team]) {
+            this.games[this.teams[team1 - 1].team] = [];
+            this.games[this.teams[team2 - 1].team] = [];
+        }
+        this.games.versus = [this.teams[team1 - 1].team, this.teams[team2 - 1].team];
+    }
+    score(score1, score2) {
+        const scorerName1 = this.games.versus[0];
+        const scorerName2 = this.games.versus[1];
+        this.games[scorerName1].push(score1);
+        this.games[scorerName2].push(score2);
+
+        const winner = score1 > score2 ? `"${scorerName1}" wins!` : score1 < score2 ? `$"{scorerName2}" wins!` : `Game is a draw!`;
+        console.log(winner);
+    }
+    seasonSummar() {}
 }
 
 export default Basketball;

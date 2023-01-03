@@ -52,9 +52,9 @@ game.buyPlayer(2, 8);
 
 game.buyPlayer(2, 7);
 // "Monstars" team can't add extra players to it's team.\nMaximum players per team is 3.
-
 game.letsPlay(1, 2);
 // New game everybody!\n"Goon Squad" vs. "Monstars"
+// console.log(game);
 
 game.score(77, 76);
 // "Goon Squad" wins!
@@ -70,10 +70,12 @@ game.letsPlay(1, 2);
 
 game.score(84, 82);
 // "Goon Squad" wins!
-
+console.log(game.games);
+/*
 game.seasonSummary();
 // Season summary for "Bun land" 3x3 league:
 // ####################
 // Total games played: 3
 // Winner team: "Goon Squad"
 // ####################
+ */
