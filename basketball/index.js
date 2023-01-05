@@ -71,9 +71,9 @@ game.letsPlay(1, 2);
 game.score(84, 82);
 // "Goon Squad" wins!
 console.log(game.games);
-/*
+
 game.seasonSummary();
-// Season summary for "Bun land" 3x3 league:
+/*// Season summary for "Bun land" 3x3 league:
 // ####################
 // Total games played: 3
 // Winner team: "Goon Squad"

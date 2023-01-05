@@ -45,10 +45,35 @@ class Basketball {
         this.games[scorerName1].push(score1);
         this.games[scorerName2].push(score2);
 
-        const winner = score1 > score2 ? `"${scorerName1}" wins!` : score1 < score2 ? `$"{scorerName2}" wins!` : `Game is a draw!`;
+        const winner = score1 > score2 ? `"${scorerName1}" wins!` : score1 < score2 ? `"${scorerName2}" wins!` : `Game is a draw!`;
         console.log(winner);
     }
-    seasonSummar() {}
+    seasonSummary() {
+        const teamSores1 = this.games[this.teams[0].team];
+        const teamSores2 = this.games[this.teams[1].team];
+        const counter = [0, 0];
+        let winner;
+        for (let i = 0; i < teamSores1.length; i++) {
+            if (teamSores1[i] > teamSores2[i]) counter[0]++;
+            if (teamSores1[i] < teamSores2[i]) counter[1]++;
+
+        }
+        if (counter[0] > counter[1]) {
+            winner = this.teams[0].team;
+        } else if (counter[0] < counter[1]) {
+            winner = tthis.teams[1].team;
+        } else {
+            winner = `no team wins`
+        }
+        console.log(
+            `Season summary for "${this.league}" 3x3 league:\n####################\nTotal games played: ${this.games[this.teams[0].team].length}\nWinner team: "${winner}"\n####################
+            `
+        );
+
+    }
+
+
 }
+
 
 export default Basketball;
