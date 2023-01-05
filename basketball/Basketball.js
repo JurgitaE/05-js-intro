@@ -66,13 +66,9 @@ class Basketball {
             winner = `no team wins`
         }
         console.log(
-            `Season summary for "${this.league}" 3x3 league:\n####################\nTotal games played: ${this.games[this.teams[0].team].length}\nWinner team: "${winner}"\n####################
-            `
-        );
-
+            `Season summary for "${this.league}" ${this.teams[0].players.length}x${this.teams[1].players.length} league:\n####################\nTotal games played: ${this.games[this.teams[0].team].length}\nWinner team: "${winner}"\n####################
+            `);
     }
-
-
 }
 
 
