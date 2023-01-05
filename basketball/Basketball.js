@@ -61,7 +61,7 @@ class Basketball {
         if (counter[0] > counter[1]) {
             winner = this.teams[0].team;
         } else if (counter[0] < counter[1]) {
-            winner = tthis.teams[1].team;
+            winner = this.teams[1].team;
         } else {
             winner = `no team wins`
         }
